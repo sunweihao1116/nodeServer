@@ -1,6 +1,6 @@
 ###node + mysql
 
-##npm i express mysql
+##npm i express mysql body-parser
 
 ## 初始化服务
 
@@ -19,3 +19,7 @@
 - drop table t_user; 删除表
 - ...
 - mysql可视化工具 sequel Pro --- http://www.sequelpro.com/
+
+## 接口开发
+- 获取用户信息 /api/user   GET
+- 登录 /api/login         POST
