@@ -1,6 +1,6 @@
-###node + mysql
+### node + mysql
 
-##npm i express mysql body-parser
+## npm i express mysql body-parser
 
 ## 初始化服务
 
@@ -21,5 +21,7 @@
 - mysql可视化工具 sequel Pro --- http://www.sequelpro.com/
 
 ## 接口开发
-- 获取用户信息 /api/user   GET
-- 登录 /api/login         POST
+- 获取用户信息 /api/user                                     GET
+- 登录 /api/login                                           POST
+- 注册 数据库插入数据 /api/register                           POST
+- 获取列表及单条数据  /api/list or /api/list/:id              GET

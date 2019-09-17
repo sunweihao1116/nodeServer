@@ -1,21 +1,20 @@
 const express = require('express');
+const { errRes } = require('../../utils/utils');
 
 module.exports = (db) => {
   const router = express.Router();
   router.get('/', (req, res) => {
-    console.log(req.params);
     const query = req.query;
     const sql = `SELECT * FROM t_user WHERE id = '${query.id}' `;
 		db.query(sql, (err, data) => {
 			if (!err) {
 				if (data.length == 0) {
-					res.send({ error : 1 });
+          errRes(res, '未查到用户信息');
 				} else {
-          console.log(data);
 					res.send(data[0]);
 				}
 			} else {
-				res.send({ error: 1 });
+				errRes(res, 'sql error');
 			}
 		})
 	})
