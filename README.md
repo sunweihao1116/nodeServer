@@ -25,3 +25,6 @@
 - 登录 /api/login                                           POST
 - 注册 数据库插入数据 /api/register                           POST
 - 获取列表及单条数据  /api/list or /api/list/:id              GET
+
+## npm i cookie-session
+- 向客户端存token（？？？？）

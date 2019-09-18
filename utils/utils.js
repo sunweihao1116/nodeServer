@@ -8,6 +8,14 @@ const errRes = (res, errMessage, status = 500) => {
   });
 }
 
+const createToken = (req ,data) => {
+  const time = new Date().getTime();
+  req.session['user_name'] = data[0].user_name; // 给客户端存cookie
+  req.session['id'] =  data[0].id; 
+  req.session['timestamp'] = time;
+}
+
 module.exports = {
   errRes,
+  createToken,
 }
