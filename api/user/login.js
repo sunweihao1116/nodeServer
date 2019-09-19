@@ -5,7 +5,7 @@ module.exports = (db) => {
   const router = express.Router();
   router.post('/', (req, res) => {
     const body = req.body;
-    console.log('------------->req', body);
+    console.log('------------->login, res.body', body);
     const sql = `SELECT * FROM t_user WHERE user_name = '${body.user_name}'`;
     db.query(sql, (err, data) => {
       if (err) {

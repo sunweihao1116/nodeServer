@@ -4,7 +4,8 @@ const { errRes } = require('../../utils/utils');
 // 获取全部列表
 module.exports = (db) => {
   const router = express.Router();
-  // 全量商品
+	// 全量商品
+	console.log('-------->getList');
   router.get('/', (req, res) => {
     const sql =`SELECT * FROM t_list`;
 		db.query(sql, (err, data) => {

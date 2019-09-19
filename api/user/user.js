@@ -4,7 +4,7 @@ const { errRes } = require('../../utils/utils');
 module.exports = (db) => {
   const router = express.Router();
   router.get('/', (req, res) => {
-		// console.log('req.session', req);
+		console.log('userInfo');
 		if (!req.session.id) { 
 			errRes(res, '未登录', 401);
 			return;
