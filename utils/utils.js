@@ -8,7 +8,7 @@ const errRes = (res, errMessage, status = 500) => {
   });
 }
 
-const createToken = (req ,data) => {
+const createCookie = (req, data) => {
   const time = new Date().getTime();
   req.session['user_name'] = data[0].user_name; // 给客户端存cookie
   req.session['id'] =  data[0].id; 
@@ -17,5 +17,5 @@ const createToken = (req ,data) => {
 
 module.exports = {
   errRes,
-  createToken,
+  createCookie,
 }

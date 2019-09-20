@@ -5,8 +5,8 @@ const { errRes } = require('../../utils/utils');
 module.exports = (db) => {
   const router = express.Router();
 	// 全量商品
-	console.log('-------->getList');
   router.get('/', (req, res) => {
+		_log(req);
     const sql =`SELECT * FROM t_list`;
 		db.query(sql, (err, data) => {
 			if (!err) {
@@ -22,7 +22,7 @@ module.exports = (db) => {
   });
   // 单商品
   router.get('/:id', (req, res) => {
-    console.log('------------_>params', req.params.id);
+		_log(req, req.params.id);
     const sql = `SELECT * FROM t_list WHERE id = '${req.params.id}'`;
 		db.query(sql, (err, data) => {
 			if (!err) {

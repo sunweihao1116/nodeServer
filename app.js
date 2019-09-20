@@ -1,20 +1,8 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql');
-const bodyParser = require('body-parser');
-const cookieSession = require('cookie-session');
 
-// body-parser 接收body数据
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
-// parse application/json
-app.use(bodyParser.json());
-
-app.use(cookieSession({
-  name: 'token',
-  keys: [''],
-  maxAge: 1000 * 60 * 60 * 12,
-}));
+require('./utils/global')(app); // 全局方法
 
 // 连接本地数据库
 const db = mysql.createConnection({
