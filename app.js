@@ -1,17 +1,7 @@
 const express = require('express');
 const app = express();
-const mysql = require('mysql');
 
-
-// 连接本地数据库
-const db = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'swh1116',
-  database : 'localhost',
-});
-
-db.connect();
-
+require('./utils/global')(app); // 全局方法
+require('./router')(app);
 
 app.listen(3000);
