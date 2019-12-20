@@ -5,7 +5,7 @@ const createServer = () => {
     
     connection.on('text', function(result) {
       console.log('接收消息', result);
-      connection.sendText('sss');
+      connection.sendText(JSON.stringify({data: '已接收到消息'}));
     })
     connection.on('connect', function(code) {
       console.log('开启连接', code)
@@ -22,3 +22,4 @@ const createServer = () => {
 
 module.exports = createServer();
 createServer().listen(8000);;
+console.log('wx://localhost:8000');
